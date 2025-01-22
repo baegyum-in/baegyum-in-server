@@ -15,7 +15,6 @@ subprojects {
     with(pluginManager) {
         apply(rootProject.libs.plugins.kotlin.jvm.get().pluginId)
         apply(rootProject.libs.plugins.kotlin.plugin.spring.get().pluginId)
-        apply(rootProject.libs.plugins.spring.dependency.management.get().pluginId)
     }
     java {
         sourceCompatibility = JavaVersion.VERSION_21
@@ -25,11 +24,6 @@ subprojects {
         compilerOptions {
             freeCompilerArgs.add("-Xjsr305=strict")
             jvmTarget.set(JvmTarget.JVM_21)
-        }
-    }
-    dependencyManagement {
-        imports {
-            mavenBom(rootProject.libs.spring.boot.dependencies.get().toString())
         }
     }
     dependencies {

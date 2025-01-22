@@ -1,5 +1,9 @@
 rootProject.name = ext["project.name"].toString()
 
+includeModule("baegyum-in-core", "core")
+includeModules("baegyum-in-infrastructure", "infrastructure")
+includeModules("baegyum-in-service", "service")
+
 fun includeModule(parentDirectory: String, name: String) {
     val modulePath = ":$name"
     include(modulePath)
@@ -15,7 +19,7 @@ fun includeModules(parentDirectory: String, parentModuleName: String) {
     val childModuleDirectories = projectDirectory
         .resolve(parentDirectory)
         .listFiles()
-        ?.filter { it.isDirectory } ?: emptyList()
+        ?.filter { it.isDirectory  || it.name == "build" } ?: emptyList()
     childModuleDirectories.forEach { childModuleDirectory ->
         val classifier = parentModuleName
             .replace(":", "-")
@@ -34,8 +38,8 @@ pluginManagement {
 
 @Suppress("UnstableApiUsage")
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         mavenCentral()
     }
 }
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
