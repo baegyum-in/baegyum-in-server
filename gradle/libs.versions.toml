@@ -23,6 +23,7 @@ spring-boot-starter-logging = { group = "org.springframework.boot", name = "spri
 spring-boot-starter-log4j2 = { group = "org.springframework.boot", name = "spring-boot-starter-log4j2", version.ref = "spring-boot" }
 spring-boot-starter-test = { group = "org.springframework.boot", name = "spring-boot-starter-test", version.ref = "spring-boot" }
 spring-boot-dependencies = { group = "org.springframework.boot", name = "spring-boot-dependencies", version.ref = "spring-boot" }
+spring-boot-starter-data-redis = { group = "org.springframework.boot", name = "spring-boot-starter-data-redis", version.ref = "spring-boot"}
 
 jackson-dataformat-yaml = { group = "com.fasterxml.jackson.dataformat", name = "jackson-dataformat-yaml", version.ref = "jackson" }
 jackson-kotlin = { group = "com.fasterxml.jackson.module", name = "jackson-module-kotlin", version.ref = "jackson" }
