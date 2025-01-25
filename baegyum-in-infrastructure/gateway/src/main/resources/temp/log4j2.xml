@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
     <Properties>
-        <Property name="logPath">logs/elk-example/</Property>
-        <Property name="rollingFileName">elk-example_app</Property>
         <Property name="defaultPattern">[%highlight{%-5level}] %d{DEFAULT} %c{1}.%M() - %msg%n%throwable{short.lineNumber}</Property>
         <Property name="logStashPattern">[%d{ISO8601}][%-5p][%-25c]%notEmpty{[%X{pipeline.id}]}%notEmpty{[%X{plugin.id}]} %m%n]</Property>
     </Properties>
